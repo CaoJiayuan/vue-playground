@@ -1,43 +1,42 @@
 <template>
-    <v-footer fixed :color="theme.color" :dark="theme.dark">
-        <div :style="{color:color}">admin.test ©{{ new Date().getFullYear() }}</div>
-        <v-spacer></v-spacer>
-        <v-btn color="dark" dark small bottom right fab @click="changeTheme({color:'grey darken-2', dark :true})">
-        </v-btn>
-        <v-btn color="white" dark small bottom right fab @click="changeTheme({color:'white'})">
-        </v-btn>
-        <v-btn color="primary" dark small bottom right fab @click="changeTheme({color:'primary'})">
-        </v-btn>
-    </v-footer>
+  <v-footer fixed :color="theme.color" :dark="theme.dark">
+    <div :style="{color:color}">admin.test ©{{ new Date().getFullYear() }}</div>
+    <v-spacer></v-spacer>
+    <v-btn v-for="(t, index) in themes" :key="index" :color="t.color" :dark="t.dark"
+           small bottom right fab
+           @click="changeTheme({color: t.color, dark : t.dark, background: t.background})">
+    </v-btn>
+  </v-footer>
 </template>
 
 <script>
-    const mapMutations = Vuex.mapMutations;
-    const mapGetters = Vuex.mapGetters;
-    export default {
-        data() {
-            return {}
-        },
-        computed  : {
-            color(){
-                return this.theme.color !== 'white' ? 'white' : 'black'
-            },
-            ...mapGetters({
-                theme:'theme'
-            })
-        },
-        components: {},
-        methods   : {
-            ...mapMutations({
-                changeTheme: 'changeTheme'
-            })
-        },
-        mounted() {
+  const mapMutations = Vuex.mapMutations
+  const mapGetters = Vuex.mapGetters
+  export default {
+    data () {
+      return {}
+    },
+    computed: {
+      color () {
+        return this.theme.color !== 'white' ? 'white' : 'black'
+      },
+      ...mapGetters({
+        theme: 'theme',
+        themes: 'themes',
+      })
+    },
+    components: {},
+    methods: {
+      ...mapMutations({
+        changeTheme: 'changeTheme'
+      })
+    },
+    mounted () {
 
-        },
-        created() {
+    },
+    created () {
 
-        },
+    },
 
-    }
+  }
 </script>

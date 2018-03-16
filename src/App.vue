@@ -3,7 +3,7 @@
     <v-app>
       <navigation v-if="!isLogin"></navigation>
       <top-bar v-if="!isLogin"></top-bar>
-      <v-content :class="theme.dark ? 'grey lighten-2' : 'white'">
+      <v-content :class="theme.background">
         <transition name="slide" mode="out-in">
           <router-view></router-view>
         </transition>
