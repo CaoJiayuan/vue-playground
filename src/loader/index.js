@@ -46,8 +46,10 @@ function loadStyles(styles) {
   return Promise.all(promises);
 }
 
-export {
+const loader = {
   createEl,
   loadStyles,
   loadScripts
 }
+
+export default loader

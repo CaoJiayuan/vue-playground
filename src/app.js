@@ -1,6 +1,9 @@
 import App from './App.vue'
-import router from './router'
+import {router} from './router'
 import store from './store';
+require('./app/request');
+require('./assets/style/app.sass')
+
 Vue.config.productionTip = false
 Vue.use(Vuetify)
 new Vue({

@@ -1,6 +1,6 @@
-import { createEl } from './cdn-loader'
+import loader from './loader'
 
-createEl().then(id => {
+loader.createEl().then(id => {
   window.id = id
   require('./app')
 })
