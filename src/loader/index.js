@@ -1,8 +1,8 @@
 import cdn from './cdn'
+require('es6-promise').polyfill();
 function createEl() {
   return new Promise(resolve => {
     let app = document.createElement('div');
-    app.innerHTML = `<app></app>`;
     document.body.appendChild(app);
     loadStatic().then(() => {
       let id = 'app-' + md5(new Date().getTime());
