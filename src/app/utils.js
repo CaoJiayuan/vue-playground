@@ -3,6 +3,8 @@ let flattened = []
 
 let storage = localStorage || sessionStorage
 
+require('./polyfill')
+
 export function throttle (callback, threshold) {
     clearTimeout(timer)
     timer = setTimeout(function () {
@@ -103,6 +105,13 @@ export function randomString (length, pool) {
     length = length || 16
     pool = pool || 'qwertyuiopasdfghjklzxcvbnm1234567890QWERTYUIOPASDFGHJKLZXCVBNM'
     return new Chance().string({length: length, pool: pool})
+}
+
+export function fastRandom (length, pool) {
+  length = length || 16
+  pool = pool || 'qwertyuiopasdfghjklzxcvbnm1234567890QWERTYUIOPASDFGHJKLZXCVBNM'
+
+  return pool.repeat(length).split('').sort(() => 0.5 - Math.random()).join('').substring(0, length - 1);
 }
 
 /**

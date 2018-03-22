@@ -1,11 +1,13 @@
 import cdn from './cdn'
+import {fastRandom} from '../app/utils'
 require('es6-promise').polyfill();
 function createEl() {
   return new Promise(resolve => {
     let app = document.createElement('div');
     document.body.appendChild(app);
     loadStatic().then(() => {
-      let id = 'app-' + md5(new Date().getTime());
+      // let id = 'app-' + md5(new Date().getTime());
+      let id = 'app-' + fastRandom();
       app.id = id;
       resolve(id)
     });
