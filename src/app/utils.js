@@ -144,6 +144,34 @@ export function flattenNode (input, nodeKey) {
     return flattened
 }
 
+export function objectGet(object, key, $default) {
+  let clone = simpleClone(object);
+  if (object.hasOwnProperty(key)) {
+    return object[key];
+  }
+
+  let partials = key.split('.');
+  let length = partials.length;
+  for (let i = 0; i < length; i++) {
+    clone = clone[partials[i]];
+    if (clone === undefined) {
+      return $default
+    }
+  }
+
+  return clone;
+}
+
+export function simpleClone(state) {
+  let copy = (state instanceof Array) ? [] : {};
+  for (let attr in state) {
+    if (!state.hasOwnProperty(attr)) continue;
+    copy[attr] = state[attr];
+  }
+  return copy;
+};
+
+
 export function Storage () {
 
 }
