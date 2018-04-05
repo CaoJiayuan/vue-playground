@@ -1,5 +1,5 @@
 import { LOGIN_PATH } from '../constant'
-import Dashboard from '../pages/Dashboard.vue'
+import Dashboard from '../pages/dashboard/Dashboard.vue'
 import Account from '../pages/account/Index.vue'
 import Login from '../pages/login/Index.vue'
 

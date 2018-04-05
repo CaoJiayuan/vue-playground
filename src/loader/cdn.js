@@ -11,7 +11,9 @@ const cdn = {
     'https://cdn.bootcss.com/vuex/3.0.1/vuex.min.js',
     'https://cdn.bootcss.com/axios/0.18.0/axios.min.js',
     'https://cdn.bootcss.com/lodash.js/4.17.5/lodash.min.js',
-    'https://cdn.bootcss.com/vuetify/1.0.6/vuetify.min.js'
+    'https://cdn.bootcss.com/vuetify/1.0.6/vuetify.min.js',
+    'https://cdn.bootcss.com/smoothscroll/1.4.6/SmoothScroll.min.js',
+    'https://cdn.bootcss.com/echarts/4.0.4/echarts.min.js',
   ]
 }
 export default cdn;

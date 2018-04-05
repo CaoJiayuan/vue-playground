@@ -41,7 +41,10 @@
       return {
         showPass: false,
         requesting: false,
-        post: {},
+        post: {
+          email:'admin@test.com',
+          password:'111111'
+        },
         valid: false
       }
     },

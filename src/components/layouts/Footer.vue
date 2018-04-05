@@ -1,6 +1,6 @@
 <template>
-  <v-footer fixed :color="theme.color" :dark="theme.dark">
-    <div :style="{color:color}">admin.test ©{{ new Date().getFullYear() }}</div>
+  <v-footer app inset fixed :color="theme.color" :dark="theme.dark">
+    <div :style="{color:color}">&nbsp;&nbsp; admin.test ©{{ new Date().getFullYear() }}</div>
     <v-spacer></v-spacer>
     <v-btn v-for="(t, index) in themes" :key="index" :color="t.color" :dark="t.dark"
            small bottom right fab
