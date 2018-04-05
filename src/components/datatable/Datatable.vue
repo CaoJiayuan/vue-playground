@@ -45,7 +45,7 @@
                               v-model="pagination.page"
                               :length="paginator.last_page"></v-pagination>
                 <v-btn :dark="theme.dark" @click="refresh" :class="refreshing ? 'animate rotation' : ''"
-                       class="pagination__item circle" style="top: -10px;" fab>
+                       class="pagination__item circle" depressed style="top: -10px;" fab>
                     <v-icon>refresh</v-icon>
                 </v-btn>
             </v-flex>

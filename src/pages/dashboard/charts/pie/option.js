@@ -56,9 +56,9 @@ const option = {
       },
       itemStyle: {
         normal: {
-          color: '#b883c2',
+          color: '#ee83e4',
           shadowBlur: 200,
-          shadowColor: '#dddddd'
+          shadowColor: '#ddd4d9'
         }
       },
 

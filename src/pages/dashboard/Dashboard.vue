@@ -2,8 +2,8 @@
   <v-container grid-list-md>
     <v-layout row wrap>
       <v-flex xs12>
-        <v-card >
-          <v-toolbar flat color="gray" dense>
+        <v-card>
+          <v-toolbar :dark="theme.dark" flat color="gray" dense>
             <v-toolbar-title>Random summary</v-toolbar-title>
           </v-toolbar>
           <v-layout row wrap>
@@ -25,24 +25,27 @@
   import PieDemo from "./charts/pie/index";
   import LineDemo from "./charts/line/index";
   import Charts from "../../components/charts/index";
-  import option from './charts/map/option'
+  import option from './charts/map/option';
+  import theme from '@/mixins/theme';
+
   export default {
-    data () {
+    data() {
       return {
-        mapOption : option
-      }
+        mapOption: option
+      };
     },
+    mixins    : [theme],
     components: {
       Charts,
       LineDemo,
       PieDemo
     },
-    methods: {},
-    mounted () {
+    methods   : {},
+    mounted() {
 
     },
-    created () {
+    created() {
 
     }
-  }
+  };
 </script>

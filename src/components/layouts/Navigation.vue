@@ -1,6 +1,6 @@
 <template>
     <v-navigation-drawer :dark="theme.dark" fixed v-model="open" app>
-        <v-toolbar flat>
+        <v-toolbar flat :dense="theme.dense">
             <v-list>
                 <v-list-tile>
                     <v-list-tile-title class="title">
@@ -96,3 +96,6 @@
         }
     }
 </script>
+<style lang="sass">
+
+</style>

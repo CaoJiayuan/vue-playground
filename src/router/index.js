@@ -2,6 +2,7 @@ import { LOGIN_PATH } from '../constant'
 import Dashboard from '../pages/dashboard/Dashboard.vue'
 import Account from '../pages/account/Index.vue'
 import Login from '../pages/login/Index.vue'
+import interceptor from '../app/interceptor'
 
 Vue.use(VueRouter)
 
@@ -40,6 +41,7 @@ const router = new VueRouter({
     routes
 })
 
+router.beforeEach(interceptor)
 
 export {
   router,

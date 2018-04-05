@@ -85,7 +85,7 @@ const FakeApi = {
         } else  {
           resolve(UserApi.afterLogin(fakeToken))
         }
-      }, 100);
+      }, 200);
     })
   },
   logout(){

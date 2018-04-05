@@ -4,6 +4,14 @@
       <navigation v-if="!isLogin"></navigation>
       <top-bar v-if="!isLogin"></top-bar>
       <v-content :class="theme.background">
+        <v-breadcrumbs divider="/">
+          <v-breadcrumbs-item
+            v-for="(item,index) in breadcrumbs"
+            :key="index"
+          >
+            {{ item.text }}
+          </v-breadcrumbs-item>
+        </v-breadcrumbs>
         <transition name="slide" mode="out-in">
           <router-view></router-view>
         </transition>
@@ -37,7 +45,8 @@
         return this.$route.path === LOGIN_PATH;
       },
       ...mapGetters({
-        theme: 'theme'
+        theme: 'theme',
+        breadcrumbs: 'breadcrumbs',
       })
     },
     mounted () {
