@@ -1,0 +1,6 @@
+*
+!/dist
+!/Dockerfile
+!/.dockerignore
+!/entry-point.sh
+!/nginx.conf.template
