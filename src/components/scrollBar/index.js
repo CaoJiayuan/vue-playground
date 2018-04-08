@@ -62,6 +62,10 @@ export default {
     },
     barHeight(){
       if (this.clientHeight !== 0){
+        if (this.clientHeight <= this.computedHeight) {
+          return 0;
+        }
+
         return ((this.computedHeight / this.clientHeight) * 100) + '%'
       }
       return 0;
