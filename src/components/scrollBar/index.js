@@ -20,7 +20,8 @@ export default {
     return {
       clientHeight : 0,
       scrollHeight : 0,
-      scrolling : false
+      scrolling : false,
+      hover: false
     }
   },
   methods : {
@@ -38,12 +39,17 @@ export default {
             top : (this.scrollHeight * 100 / this.clientHeight) + '%',
             opacity: this.barOpacity
           }
+        },
+        on : {
+          hover : () => this.hover = true,
+          leave : () => this.hover = false,
+          move : (e) => console.log(e)
         }
       })
     },
     onScroll(e){
       this.scrolling = true;
-      throttle(() => this.scrolling = false, 300);
+      throttle(() => this.scrolling = false, 500);
       this.scrollHeight = e.path[1].scrollY;
     }
   },
@@ -61,7 +67,7 @@ export default {
       return 0;
     },
     barOpacity(){
-      return this.scrolling ? .75 : .2
+      return (this.scrolling || this.hover) ? .75 : .2
     }
   },
   mounted() {

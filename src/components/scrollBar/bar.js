@@ -25,7 +25,15 @@ export default {
   },
   render(h){
     return h('div', {
-      style : this.computedStyles
+      style : this.computedStyles,
+      on : {
+        mouseover : () => this.$emit('hover'),
+        mouseleave : () => this.$emit('leave'),
+        mousedown : (e) => {
+        },
+        mouseup : (e) => {
+        }
+      }
     })
   }
 }
