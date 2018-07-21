@@ -1,5 +1,5 @@
 import store from '../store';
-import {API_PREFIX,TOKEN_CACHE_NAME,LOGIN_PATH,TOKEN_EXPIRE_NAME} from '../constant';
+import {TOKEN_CACHE_NAME,LOGIN_PATH,TOKEN_EXPIRE_NAME} from '../constant';
 import {Storage} from '../app/utils';
 import {router} from '../router';
 import UserApi from '../apis/UserApi'
@@ -10,7 +10,9 @@ const REFRESHED = 2;
 let storage = new Storage();
 
 axios.interceptors.request.use(config => {
-    config.url  = API_PREFIX + config.url;
+    if (config.local !== true) {
+      config.baseURL = process.env.API_BASE_URL;
+    }
     if (config.guest !== true) {
         let jwt = storage.get(TOKEN_CACHE_NAME);
         let expire = storage.get(TOKEN_EXPIRE_NAME);
